@@ -1,0 +1,43 @@
+swagger: '2.0'
+info:
+  title: Ratsub Crypto API
+  version: 1.0.0
+host: ratsubfunctions.azurewebsites.net
+basePath: /
+schemes:
+  - https
+  - http
+paths:
+  /api/Crypto:
+    get:
+      description: 
+        This is request will gives us the Encrypted/Decrypted value based on app specific encapsulated encryptKey.
+      operationId: /api/Crypto/get
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+        - name: action
+          in: query
+          description: Enter action you want to perform(encrypt/decrypt)
+          type: string
+        - name: cryptoKey
+          in: query
+          description: Enter unique cryptoKey
+          type: string
+        - name: value
+          in: query
+          description: Enter unique cryptoKey
+          type: string
+      responses:
+        '200':
+          description: Success operation
+      security:
+        - apikeyQuery: []
+definitions: {}
+securityDefinitions:
+  apikeyQuery:
+    type: apiKey
+    name: code
+    in: query
