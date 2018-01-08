@@ -12,7 +12,6 @@ paths:
     get:
       description: 
         This is request will gives us the Encrypted/Decrypted value based on app specific encapsulated encryptKey.
-      operationId: /api/Crypto/get
       operationId: Execute
       produces:
         - application/json
