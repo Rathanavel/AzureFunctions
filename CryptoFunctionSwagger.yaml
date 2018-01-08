@@ -23,10 +23,14 @@ paths:
           in: query
           description: Enter action you want to perform(encrypt/decrypt)
           type: string
+          required: true
+          format: string
         - name: cryptoKey
           in: query
           description: Enter unique cryptoKey
           type: string
+          required: true
+          format: string
         - name: value
           in: query
           description: Enter unique cryptoKey
