@@ -13,6 +13,7 @@ paths:
       description: 
         This is request will gives us the Encrypted/Decrypted value based on app specific encapsulated encryptKey.
       operationId: /api/Crypto/get
+      operationId: Execute
       produces:
         - application/json
       consumes:
@@ -30,9 +31,16 @@ paths:
           in: query
           description: Enter unique cryptoKey
           type: string
+          required: true
+          format: string
       responses:
         '200':
           description: Success operation
+          schema:
+            type: object
+            properties:
+              Value:
+                type: string
       security:
         - apikeyQuery: []
 definitions: {}
